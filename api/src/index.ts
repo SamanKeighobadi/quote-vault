@@ -13,8 +13,8 @@ app.use(logger())
 app.use("*", errorHandler);
 
 app.route("/api/user", userRouter);
-app.route("/api/qoutes", qouteRouter);
-app.route("/api/qoutes/category", categoryRouter);
+app.route("/api/quotes", qouteRouter);
+app.route("/api/quotes/category", categoryRouter);
 
 app.get("/", (c) => {
   return c.json({ message: "Welcome to the Hono API!" });

@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <button class="btn btn-primary">Primary</button>
+    <RouterLink to="/" />
 
   </header>
 
