@@ -1,0 +1,7 @@
+# deps
+node_modules/
+
+*.db
+migrations/
+/src/generated/prisma
+.env
