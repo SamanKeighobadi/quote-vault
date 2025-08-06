@@ -2,15 +2,15 @@
 import type { IQuote } from '@/types/quoute.types';
 import QuoteItem from './QuoteItem.vue';
 
-const {quotes} = defineProps<{quotes:IQuote[]}>()
+const { quotes } = defineProps<{ quotes: IQuote[] }>()
 
 console.log(quotes)
 
 </script>
 
 <template>
-   <div>
-      
-     <QuoteItem v-for="quote in quotes" :text="quote.text" :author="quote.author"/>
-   </div>
+  <div class="">
+
+    <QuoteItem v-for="quote in quotes" :text="quote.text" :author="quote.author" />
+  </div>
 </template>

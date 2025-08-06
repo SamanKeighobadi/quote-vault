@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BaseButton from '@/base/BaseButton.vue';
 import QuotesList from '@/components/qoutes/QuotesList.vue';
 import { getQuotes } from '@/services/quote.services';
 import type { IQuote } from '@/types/quoute.types';
@@ -23,7 +24,13 @@ onMounted(
 
 <template>
   <main class="">
-    <QuotesList :quotes="quotes"  />
+    <div>
+      <BaseButton color="primary">
+        <RouterLink to="/add">Add Quote</RouterLink>
+      </BaseButton>
+
+    </div>
+    <QuotesList :quotes="quotes" />
   </main>
 </template>
 
