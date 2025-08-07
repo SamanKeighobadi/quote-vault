@@ -8,11 +8,12 @@ interface TextareaProps {
     size?: DaisyUISizes;
     placeholder?: string
     disabled?: boolean;
-    rows?:number;
-    cols?:number
+    rows?: number;
+    cols?: number
 }
 
-const { color, placeholder, size} = defineProps<TextareaProps>()
+const { color, placeholder, size } = defineProps<TextareaProps>()
+const model = defineModel<string>({ default: '' })
 
 
 const classes = computed(() => ({
@@ -24,5 +25,6 @@ const classes = computed(() => ({
 </script>
 
 <template>
-    <textarea :placeholder="placeholder" :class="classes" :disabled="disabled" :rows="rows" :cols="cols"></textarea>
+    <textarea :placeholder="placeholder" :class="classes" :disabled="disabled" :rows="rows" :cols="cols"
+        v-model="model"></textarea>
 </template>

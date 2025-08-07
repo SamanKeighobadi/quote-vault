@@ -13,6 +13,7 @@ interface InputProps {
 }
 
 const { color, placeholder, size, type } = defineProps<InputProps>()
+const model = defineModel<string>({ default: '' })
 
 const inputClasses = computed(() => ({
     "input": true,
@@ -25,5 +26,5 @@ const inputClasses = computed(() => ({
 
 <template>
 
-    <input :type="type" :placeholder="placeholder" :class="inputClasses" :disabled="disabled">
+    <input :type="type" :placeholder="placeholder" :class="inputClasses" :disabled="disabled" v-model="model">
 </template>
