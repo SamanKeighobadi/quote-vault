@@ -48,4 +48,21 @@ qouteRouter.post("/", zValidator("json", qouteSchema), async (c) => {
   });
 });
 
+qouteRouter.delete("/:id", async (c) => {
+  const quoteId = await parseInt(c.req.param("id"));
+  await prisma.quote.delete({
+    where: {
+      id: quoteId,
+    },
+  });
+
+  return c.json(
+    {
+      status: "success",
+      message: "Qoute deleted successfully",
+    },
+    200
+  );
+});
+
 export default qouteRouter;

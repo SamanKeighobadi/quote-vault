@@ -4,13 +4,12 @@ import QuoteItem from './QuoteItem.vue';
 
 const { quotes } = defineProps<{ quotes: IQuote[] }>()
 
-console.log(quotes)
 
 </script>
 
 <template>
   <div class="">
 
-    <QuoteItem v-for="quote in quotes" :text="quote.text" :author="quote.author" />
+    <QuoteItem v-for="quote in quotes" :text="quote.text" :author="quote.author" :id="quote.id" />
   </div>
 </template>

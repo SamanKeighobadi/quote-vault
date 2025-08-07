@@ -19,3 +19,10 @@ export const createQuoute = async (data: QuoteBody) => {
   const response = await axios.post("http://localhost:3000/api/quotes", data);
   return response;
 };
+
+
+
+export const deleteQuote = async (id:number) =>{
+    const response = await axios.delete(`http://localhost:3000/api/quotes/${id}`)
+    return response
+}
