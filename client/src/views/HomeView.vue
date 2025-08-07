@@ -1,24 +1,14 @@
 <script setup lang="ts">
 import BaseButton from '@/base/BaseButton.vue';
 import QuotesList from '@/components/qoutes/QuotesList.vue';
-import { getQuotes } from '@/services/quote.services';
-import type { IQuote } from '@/types/quoute.types';
-import { onMounted, ref } from 'vue';
+import { useQuoteStore } from '@/stores/quote';
+import { onMounted } from 'vue';
 
-const quotes = ref<IQuote[]>([])
 
-onMounted(
-  async () => {
-    try {
 
-      quotes.value = await getQuotes()
+const quoteStore = useQuoteStore()
 
-    } catch (error) {
-      console.log(error);
-
-    }
-  }
-)
+onMounted(() => quoteStore.getAllQuotes())
 
 </script>
 
@@ -33,7 +23,7 @@ onMounted(
       </RouterLink>
 
     </div>
-    <QuotesList :quotes="quotes" />
+    <QuotesList :quotes="quoteStore.quotes" />
   </main>
 </template>
 

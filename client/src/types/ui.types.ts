@@ -9,6 +9,6 @@ export type DaisyUIColors =
 export type DaisyUISizes = "xs" | "sm" | "md" | "lg";
 
 export interface SelectOption {
-  label: string;
+  label: string | number;
   value: string | number;
 }
