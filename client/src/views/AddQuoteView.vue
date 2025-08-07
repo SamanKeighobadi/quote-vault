@@ -8,7 +8,10 @@ import type { ICategory, QuoteBody } from '@/types/quoute.types';
 import type { SelectOption } from '@/types/ui.types';
 
 import { onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { toast } from 'vue3-toastify';
 
+const router = useRouter()
 
 const author = ref('')
 const quote = ref('')
@@ -42,7 +45,12 @@ const submit = () => {
         categoryId: category.value!
     }
 
+    toast.success("Quote added successfully")
+
     createQuoute(body)
+    setTimeout(() => {
+        router.push("/")
+    }, 1000);
 }
 
 

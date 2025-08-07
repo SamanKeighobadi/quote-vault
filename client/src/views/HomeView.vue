@@ -25,9 +25,12 @@ onMounted(
 <template>
   <main class="">
     <div>
-      <BaseButton color="primary">
-        <RouterLink to="/add">Add Quote</RouterLink>
-      </BaseButton>
+      <RouterLink to="/add">
+        <BaseButton color="primary">
+          Add Quote
+
+        </BaseButton>
+      </RouterLink>
 
     </div>
     <QuotesList :quotes="quotes" />
