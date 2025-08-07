@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import {logger} from 'hono/logger'
+import {cors} from 'hono/cors'
 
 import userRouter from "../routes/users";
 import qouteRouter from "../routes/qoutes";
@@ -9,6 +10,7 @@ import { errorHandler } from "../utils/errors";
 
 const app = new Hono();
 
+app.use('/api/*', cors())
 app.use(logger())
 app.use("*", errorHandler);
 

@@ -12,7 +12,7 @@ interface SelectProps {
 }
 
 const props = defineProps<SelectProps>()
-const model = defineModel<string>({ default: '' })
+const model = defineModel<number>()
 
 const selectClasses = computed(() => ({
     'select': true,

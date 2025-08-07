@@ -10,5 +10,5 @@ export type DaisyUISizes = "xs" | "sm" | "md" | "lg";
 
 export interface SelectOption {
   label: string;
-  value: string;
+  value: string | number;
 }
