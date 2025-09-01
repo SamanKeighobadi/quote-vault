@@ -22,7 +22,7 @@ const handleRemoveQuoute = async (quoteId: number) => {
 </script>
 
 <template>
-    <div class="card bg-base-100 card-lg  shadow-sm">
+    <div class="card bg-base-100 card-lg  shadow-lg mb-5">
 
         <div class="card-body">
 
@@ -30,10 +30,11 @@ const handleRemoveQuoute = async (quoteId: number) => {
             <h6 class="text-slate-400">
                 {{ author }}
             </h6>
-            <div>
+            <div class="flex justify-end">
                 <BaseButton color="error" @click="handleRemoveQuoute(id)">
                     Delete
                 </BaseButton>
+
             </div>
         </div>
     </div>

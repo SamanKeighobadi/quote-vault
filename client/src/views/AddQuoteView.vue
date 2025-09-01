@@ -47,15 +47,24 @@ const submit = () => {
 
 <template>
 
-    <div class="card">
-        <div class="card-body">
-            <div class="w-80">
-                <BaseInput color="accent" placeholder="author" v-model="author" />
-                <BaseSelect :options="quoteStore.categories" v-model="category" />
-                <div class="py-4">
-                    <BaseTextarea color="accent" placeholder="quote" v-model="quote" />
+    <div class="flex justify-center mt-50">
+        <div class="card shadow-lg">
+            <div class="card-title px-6">
+                    <p>Add New Quoute</p>
+            </div>
+            <div class="card-body">
+                <div class="w-80">
+                    <BaseInput color="accent" placeholder="author" v-model="author" />
+                    <div class="mt-4">
+                        <BaseSelect :options="quoteStore.categories" v-model="category" />
+                    </div>
+
+
+                    <div class="py-4">
+                        <BaseTextarea color="accent" placeholder="quote" v-model="quote" />
+                    </div>
+                    <BaseButton color="primary" @click="submit()">Submit</BaseButton>
                 </div>
-                <BaseButton color="primary" @click="submit()">Submit</BaseButton>
             </div>
         </div>
     </div>

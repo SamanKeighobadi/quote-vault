@@ -13,13 +13,13 @@ onMounted(() => quoteStore.getAllQuotes())
 </script>
 
 <template>
-  <main class="">
-    <div>
+  <main class="py-10">
+    <div class="flex justify-end">
       <RouterLink to="/add">
-        <BaseButton color="primary">
+        <BaseButton color="primary" class="mb-4">
           Add Quote
-
         </BaseButton>
+        
       </RouterLink>
 
     </div>

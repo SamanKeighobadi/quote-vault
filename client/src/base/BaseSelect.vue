@@ -26,6 +26,5 @@ const selectClasses = computed(() => ({
     <select :class="selectClasses" v-model="model">
         <option disabled selected>Select</option>
         <option v-for="value in options" :value="value.value">{{ value.label }}</option>
-
     </select>
 </template>
