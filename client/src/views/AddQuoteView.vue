@@ -54,7 +54,7 @@ const submit = () => {
             </div>
             <div class="card-body">
                 <div class="w-80">
-                    <BaseInput color="accent" placeholder="author" v-model="author" />
+                    <BaseInput color="neutral" placeholder="author" v-model="author" />
                     <div class="mt-4">
                         <BaseSelect :options="quoteStore.categories" v-model="category" />
                     </div>
@@ -63,7 +63,8 @@ const submit = () => {
                     <div class="py-4">
                         <BaseTextarea color="accent" placeholder="quote" v-model="quote" />
                     </div>
-                    <BaseButton color="primary" @click="submit()">Submit</BaseButton>
+                    <BaseButton color="info" @click="submit()">Submit</BaseButton>
+                 
                 </div>
             </div>
         </div>

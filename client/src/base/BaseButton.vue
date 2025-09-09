@@ -1,29 +1,35 @@
 <script lang="ts" setup>
+import type { DaisyUIColors, DaisyUISizes } from '@/types/ui.types';
 import { computed } from 'vue';
 
 
-type ButtonColors = "neutral" | "primary" | "info" | "error" | "secondary" | "accent" | "success"
-type ButtonSizes = 'xs' | 'sm' | 'md' | 'lg';
-
 interface BaseButtonProps {
-    color?: ButtonColors,
+    color: DaisyUIColors,
     disabled?: boolean,
-    size?: ButtonSizes,
+    size?: DaisyUISizes,
     loading?: boolean
 }
 
 const { color, disabled, loading, size } = defineProps<BaseButtonProps>()
 
-const buttonClasses = computed(() => ({
-    'btn': true,
-    [`btn-${color}`]: color,
-    [`btn-${size}`]: size,
-    'btn-disabled': disabled,
-    'loading': loading,
-}));
+
+const buttonClasses = computed(() =>
+  [
+    'btn',
+    color && `btn-${color}`,
+    size && `btn-${size}`,
+    disabled && 'btn-disabled',
+    loading && 'loading',
+  ]
+    .filter(Boolean)
+    .join(' ')
+);
+
+
 </script>
 
 <template>
+
     <button :class="buttonClasses" :disabled="disabled || loading">
         <slot></slot>
     </button>

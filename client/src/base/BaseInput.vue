@@ -15,12 +15,12 @@ interface InputProps {
 const { color, placeholder, size, type } = defineProps<InputProps>()
 const model = defineModel<string>({ default: '' })
 
-const inputClasses = computed(() => ({
-    "input": true,
-    [`input-${color}`]: color,
-    [`input-${size}`]: size,
+const inputClasses = computed(() => [
+    "input",
+    [`input-${color}`],
+    [`input-${size || "md"}`]
+].filter(Boolean).join(' '))
 
-}))
 
 </script>
 

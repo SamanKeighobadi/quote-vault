@@ -31,7 +31,7 @@ const handleRemoveQuoute = async (quoteId: number) => {
                 {{ author }}
             </h6>
             <div class="flex justify-end">
-                <BaseButton color="error" @click="handleRemoveQuoute(id)">
+                <BaseButton color="secondary" @click="handleRemoveQuoute(id)">
                     Delete
                 </BaseButton>
 
